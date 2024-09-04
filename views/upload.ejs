@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/upload.css">
+</head>
+<body>
+    <%- include('partials/navbar', { user: user }) %>
+    <div class="body-part">
+
+        <div class="divtext">
+            <form id="uploadForm" action="/upload_photo" method="POST" enctype="multipart/form-data">
+                <input type="file" name="photos" multiple required>
+                <button type="submit">Upload Files</button>
+            </form>
+        </div>
+    
+        <div class="allContents">
+            <table>
+                <thead class="headclass">
+                    <tr>
+                        <th>S.No</th>
+                        <th>File Name</th>
+                        <th>File Size</th>
+                        <th>Content Type</th>
+                        <th>View</th>
+                        <th>Download</th>
+                        <th>Delete</th>
+    
+    
+                    </tr>
+                </thead>
+                <tbody class="bodyclass">
+                    <% userFiles.forEach((file, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= file.fileName %></td>
+                            <td><%= (file.size / 1024).toFixed(2) %> KB</td> <!-- Display size in KB -->
+                            <td><%= file.contentType %></td>
+                            <td>
+                                <!-- <%= file._id %> -->
+                                <a href="/view/<%= file._id %>">view</a>
+                            </td>
+                            <td>
+                                <a href="/download/<%= file._id %>">Download</a>
+                            </td>
+                            <td>
+                                <a href="/delete/<%= file._id %>">Delete</a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    
+</body>
+</html>

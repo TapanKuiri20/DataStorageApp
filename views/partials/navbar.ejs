@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Repository</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="head">
+            <img id="logoImag" src="/images/big-data.png" alt="logo">
+            <h1>Data Repository</h1>
+        </div>
+        <div class="mid">
+           <a href="#" class="linkes">Home</a> 
+           <a href="#" class="linkes">About</a> 
+           <a href="#" class="linkes">Services</a> 
+        </div>
+        <div class="end">
+            <div class="profile">
+                <% if (user ) { %>
+                    <div class="profile-initial">
+                        <h1> <%= user.initial %></h1>
+                    </div>
+                <% } else { %>
+                    <img src="/images/profile2.png" alt="profileIcon">
+                <% } %>
+                <div class="menu" id="menu">
+                    <a href="/login" class="login">Login</a>
+                    <a href="/logout" class="logout">Logout</a>
+                    <a href="/deleteAccount" class="delete">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

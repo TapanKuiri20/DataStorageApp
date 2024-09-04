@@ -1,0 +1,131 @@
+/* General Reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+   font-family: 'Arial', sans-serif;
+}
+
+/* Navigation Bar Styles */
+.nav {
+   height: 90px;
+   margin: 10px;
+   padding: 5px;
+   width: auto;
+   display: flex;
+   /* background-color: #7e7d7d; */
+   justify-content: space-between;
+}
+
+/* Header Styles */
+.head {
+   display: flex;
+   align-items: center;
+   margin-left: 10px;
+}
+
+.head img {
+   height: 60px;
+   border-radius: 50px;
+   padding: 5px;
+   border: 2px solid black;
+}
+
+.head h1 {
+   margin-left: 5px;
+   text-shadow: -5px 6px 8px rgba(0, 0, 0, 0.3);
+   font-weight: 600;
+}
+
+/* Mid Section Styles */
+.mid {
+   width: 500px;
+   align-items: center;
+   padding: 0 20px;
+   justify-content: space-between;
+   display: flex;
+}
+
+.mid a {
+   text-decoration: none;
+   color: #0000FF;
+}
+
+/* End Section Styles */
+.end {
+   margin-right: 4%;
+   width: 130px;
+   align-items: center;
+   justify-content: space-between;
+   display: flex;
+}
+
+.end a {
+   border-radius: 1px;
+   text-decoration: none;
+   font-weight: 600;
+   color: white;
+}
+
+/* Profile Styles */
+.profile {
+   position: relative;
+   cursor: pointer;
+   margin-left: 80%;
+}
+
+.profile img {
+   height: 45px;
+   border-radius: 50px;
+   /* padding: 0px; */
+}
+
+/* Menu Styles */
+.menu {
+   display: none; /* Hide menu by default */
+   position: absolute;
+   top: 100%;
+   right: 0;
+   background-color: #444;
+   padding: 10px;
+   border-radius: 4px;
+   opacity: 0;
+   transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+.profile:hover .menu,
+.menu:hover {
+   display: block; /* Show menu */
+   opacity: 1;
+   visibility: visible;
+}
+
+.menu a {
+   color: #fff;
+   text-decoration: none;
+   display: block;
+   padding: 5px 0;
+}
+
+.profile-initial{
+   border-radius: 50px;
+   height: 45px;
+   border: 2px solid black;
+   width: 45px;
+   text-align: center;
+   justify-content: center;
+}
+
+.menu a:hover {
+   background-color: #555;
+}
+
+/* Delete Image Styles (if needed) */
+#delete-img {
+   cursor: pointer;
+   height: 20px;
+}

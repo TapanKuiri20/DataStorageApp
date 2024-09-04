@@ -1,0 +1,75 @@
+/* Reset margins and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Body styles */
+body {
+    background-image: url("https://cdn-ajfbi.nitrocdn.com/GuYcnotRkcKfJXshTEEKnCZTOtUwxDnm/assets/images/optimized/rev-2a08180/www.astera.com/wp-content/uploads/2020/11/MicrosoftTeams-image-35-1536x904.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* Container styles */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Text styles */
+.text{
+    text-align: center;
+}
+.text h2 {
+    margin-bottom: 20px;
+}
+
+/* Form input styles */
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Form button styles */
+form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color:#007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+ 
+
+/* Additional styles for form paragraph */
+form p {
+    margin-top: 20px;
+}
+
+form p span {
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+form p span:hover {
+    color: #0056b3;
+}

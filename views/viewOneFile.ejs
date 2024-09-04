@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Styles for the container and video */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: darkblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #img-file {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .video-div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: khaki;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="video-div">
+            <% if (photoObj.contentType.startsWith('image/')) { %>
+                <img id="img-file" src="data:<%= photoObj.contentType %>;base64,<%= photoObj.data.toString('base64') %>" alt="<%= photoObj.fileName %>"/>
+            <% } else if (photoObj.contentType === 'application/pdf') { %>
+                <embed src="data:<%= photoObj.contentType %>;base64,<%= photoObj.data.toString('base64') %>" type="application/pdf" width="100%" height="100%" />
+            <% } else if (photoObj.contentType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || photoObj.contentType === 'application/msword') { %>
+                <a href="data:<%= photoObj.contentType %>;base64,<%= photoObj.data.toString('base64') %>" download="<%= photoObj.fileName %>">Click here to download and view the document</a>
+            <% } else if (photoObj.contentType.startsWith('video/')) { %>
+                <video controls>
+                    <source src="data:<%= photoObj.contentType %>;base64,<%= photoObj.data.toString('base64') %>" type="<%= photoObj.contentType %>">
+                    Your browser does not support the video tag.
+                </video>
+            <% } else { %>
+                <p>Cannot display this file type: <%= photoObj.contentType %></p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
